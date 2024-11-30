@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5EFE3"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="20dp">
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="PetCare"
+        android:textColor="#FB6D7F"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_border"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_border"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:inputType="textPassword" />
+
+    <!-- Repeat Password Field -->
+    <EditText
+        android:id="@+id/repeatPasswordEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Repeat Password"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_border"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:inputType="textPassword" />
+
+    <!-- User Role Spinner (Dropdown) -->
+    <Spinner
+        android:id="@+id/userRoleSpinner"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_border"
+        android:spinnerMode="dropdown" />
+
+    <!-- SignUp Button -->
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="SignUp"
+        android:padding="12dp"
+        android:backgroundTint="#46C2D7"
+        android:textColor="#FFF"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <!-- Login Text -->
+    <TextView
+        android:id="@+id/LoginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="18sp"
+        android:textColor="#000" />
+</LinearLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5EFE3"
+    android:padding="16dp">
+
+    <!-- Logo and profile button Linear Layout -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PetCare"
+            android:textColor="#FB6D7F"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp" />
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="125dp"
+            android:src="@drawable/dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_shape"
+            android:clipToOutline="true" />
+    </LinearLayout>
+
+    <!-- ScrollView for the container to make it scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/container_background"
+            android:layout_margin="6dp"
+            android:padding="10dp">
+
+            <!-- Title Text and Add Button -->
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_border"
+                android:backgroundTint="#46C2D7"
+                android:layout_marginStart="25dp">
+
+                <TextView
+                    android:id="@+id/cardTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Pets"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginStart="80dp"
+                    android:padding="6dp" />
+
+                <Button
+                    android:id="@+id/addPetButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="+"
+                    android:padding="0dp"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="#FB6D7F"
+                    android:textColor="#FFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Pet Grid Layout -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:rowCount="5"
+                android:layout_marginBottom="16dp">
+
+                <!-- Pet Slot -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:padding="3dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_border"
+                    android:backgroundTint="#B0FBFF">
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="🗑️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#FB6D7F"
+                        android:layout_gravity="bottom|start"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="✏️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#46C2D7"
+                        android:textColor="#FFF"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="8dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:padding="3dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_border"
+                    android:backgroundTint="#B0FBFF">
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="🗑️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#FB6D7F"
+                        android:layout_gravity="bottom|start"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="✏️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#46C2D7"
+                        android:textColor="#FFF"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="8dp" />
+                </FrameLayout>
+
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:padding="3dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_border"
+                    android:backgroundTint="#B0FBFF">
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="🗑️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#FB6D7F"
+                        android:layout_gravity="bottom|start"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="✏️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#46C2D7"
+                        android:textColor="#FFF"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="8dp" />
+                </FrameLayout>
+
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:padding="3dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_border"
+                    android:backgroundTint="#B0FBFF">
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="🗑️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#FB6D7F"
+                        android:layout_gravity="bottom|start"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="✏️"
+                        android:textSize="20sp"
+                        android:backgroundTint="#46C2D7"
+                        android:textColor="#FFF"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="8dp" />
+                </FrameLayout>
+
+
+
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
