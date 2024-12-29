@@ -64,7 +64,7 @@
         android:textColor="#000"
         android:inputType="textPassword" />
 
-    <!-- User Role Spinner (Dropdown) -->
+    <!-- User Role Dropdown -->
     <Spinner
         android:id="@+id/userRoleSpinner"
         android:layout_width="350dp"

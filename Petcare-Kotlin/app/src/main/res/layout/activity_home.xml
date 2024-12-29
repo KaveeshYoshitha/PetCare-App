@@ -37,7 +37,6 @@
             android:clipToOutline="true" />
     </LinearLayout>
 
-    <!-- ScrollView for the container to make it scrollable -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -87,7 +86,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Pet Grid Layout -->
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +94,6 @@
                 android:rowCount="5"
                 android:layout_marginBottom="16dp">
 
-                <!-- Pet Slot -->
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="200dp"
@@ -212,6 +209,12 @@
                         android:layout_gravity="bottom|end"
                         android:layout_margin="8dp" />
                 </FrameLayout>
+
+
+
+
+
+
 
 
 

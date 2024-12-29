@@ -22,18 +22,25 @@
 <!--            </intent-filter>-->
 <!--        </activity>-->
 
+
+
 <!--        <activity android:name=".LoginActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
+
+
+
 <!--        <activity android:name=".SignUpActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
+
+
 
 <!--        <activity android:name=".HomeActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
@@ -43,12 +50,17 @@
 <!--        </activity>-->
 
 
+
+
 <!--        <activity android:name=".NearByDoctorsActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
+
+
+
 
 <!--        <activity android:name=".EdituserActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
@@ -58,6 +70,9 @@
 <!--        </activity>-->
 
 
+
+
+
 <!--        <activity android:name=".AddNewPetActivity"  android:exported="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -65,11 +80,23 @@
 <!--            </intent-filter>-->
 <!--        </activity>-->
 
-        <activity android:name=".EditPetActivity"  android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
+
+<!--        <activity android:name=".EditPetActivity"  android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+
+
+        <activity android:name=".ViewPetActivity"  android:exported="true">-->
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+                        <category android:name="android.intent.category.LAUNCHER" />
+                    </intent-filter>
         </activity>
 
     </application>

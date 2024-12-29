@@ -22,7 +22,7 @@
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add New Pet"
+            android:text="Pet Details"
             android:textSize="24sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -127,34 +127,6 @@
                 android:textColor="#000"
                 />
 
-            <Button
-                android:id="@+id/documentsButton"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="Select Medical Document"
-                android:padding="12dp"
-                android:layout_marginBottom="24dp"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:backgroundTint="#9EEDFB"
-                />
-
-
-
-
-
-
-            <!-- Add Button -->
-            <Button
-                android:id="@+id/addButton"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="Add"
-                android:padding="12dp"
-                android:backgroundTint="#FB6D7F"
-                android:textColor="#FFF"
-                android:textSize="21sp"
-                android:textStyle="bold" />
 
 
 
