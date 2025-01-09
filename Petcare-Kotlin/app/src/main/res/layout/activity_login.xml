@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,6 +13,7 @@
     android:paddingRight="30dp"
     android:paddingTop="10dp"
     android:paddingBottom="20dp"
+    tools:context=".LoginActivity"
 
     >
 
@@ -22,14 +25,14 @@
         android:layout_marginTop="0dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="PetCare"
+        android:text="@string/petcare"
         android:textColor="#FB6D7F"
         android:textSize="70sp"
         android:textStyle="bold" />
 
     <!-- Profile Image -->
     <ImageView
-        android:id="@+id/profileImageView"
+        android:id="@+id/profilePicView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginBottom="27dp"
@@ -38,12 +41,12 @@
         android:background="@drawable/circle_shape"
         android:clipToOutline="true" />
 
-    <!-- Username Field -->
+    <!-- Email Field -->
     <EditText
-        android:id="@+id/usernameEditText"
+        android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="User Name"
+        android:hint="@string/email"
         android:padding="12dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_border"
@@ -53,23 +56,32 @@
 
     <!-- Password Field -->
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         android:padding="12dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_border"
         android:textColorHint="#000"
         android:textColor="#000"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        app:passwordToggleEnabled="true"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <!-- Login Button -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:padding="12dp"
         android:backgroundTint="#46C2D7"
         android:textColor="#FFF"
@@ -83,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Sign up"
+        android:text="@string/sign_up"
         android:textSize="18sp"
         android:textColor="#000" />
 

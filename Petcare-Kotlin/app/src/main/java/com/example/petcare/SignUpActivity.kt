@@ -1,61 +1,66 @@
 package com.example.petcare
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
+import android.text.TextUtils
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
+import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.example.petcare.LoginActivity
+import com.example.petcare.databinding.ActivitySignupBinding
 
 class SignUpActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySignupBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge() // Enables edge-to-edge layout
 
-        // Set the correct layout for the sign-up activity
-        setContentView(R.layout.activity_signup)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Set up the edge-to-edge padding to handle system bars
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        firebaseAuth = FirebaseAuth.getInstance()
+
+
+        binding.LoginTextView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
+        binding.signUpButton.setOnClickListener {
+            val email = binding.email.text.toString()
+            val pass = binding.password.text.toString()
 
-        // Initialize the Spinner (dropdown) for user roles
-        val userRoleSpinner: Spinner = findViewById(R.id.userRoleSpinner)
-        val userRoles = arrayOf("Normal User", "Doctor")
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
 
-        // Set up the ArrayAdapter with a simple dropdown layout
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, userRoles)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        val user = firebaseAuth.currentUser
+                        val intent = Intent(this, EdituserActivity::class.java)
+                        intent.putExtra("email", email)
+                        intent.putExtra("uid", user?.uid) // Pass user ID for later use
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
 
-        // Set the adapter for the Spinner
-        userRoleSpinner.adapter = adapter
+                    }
+                }
 
-        // Optionally, set the default value (Normal User) - this is usually the first item
-        userRoleSpinner.setSelection(0)
+            } else {
+                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
 
-
-
-
+            }
         }
     }
-
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContentView(R.layout.activity_signup)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-//    }
-
-
-
+}

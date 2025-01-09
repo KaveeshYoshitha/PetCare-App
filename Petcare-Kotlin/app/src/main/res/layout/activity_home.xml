@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5EFE3"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".HomeActivity">
 
     <!-- Logo and profile button Linear Layout -->
     <LinearLayout
@@ -86,141 +89,46 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- Pet List - Only visible if there are pets -->
             <GridLayout
+                android:id="@+id/gridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="5"
                 android:layout_marginBottom="16dp">
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:padding="3dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_border"
-                    android:backgroundTint="#B0FBFF">
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="🗑️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#FB6D7F"
-                        android:layout_gravity="bottom|start"
-                        android:layout_margin="8dp"
-                        />
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="✏️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#46C2D7"
-                        android:textColor="#FFF"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="8dp" />
-                </FrameLayout>
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:padding="3dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_border"
-                    android:backgroundTint="#B0FBFF">
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="🗑️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#FB6D7F"
-                        android:layout_gravity="bottom|start"
-                        android:layout_margin="8dp"
-                        />
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="✏️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#46C2D7"
-                        android:textColor="#FFF"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="8dp" />
-                </FrameLayout>
-
-
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:padding="3dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_border"
-                    android:backgroundTint="#B0FBFF">
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="🗑️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#FB6D7F"
-                        android:layout_gravity="bottom|start"
-                        android:layout_margin="8dp"
-                        />
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="✏️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#46C2D7"
-                        android:textColor="#FFF"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="8dp" />
-                </FrameLayout>
-
-
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:padding="3dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_border"
-                    android:backgroundTint="#B0FBFF">
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="🗑️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#FB6D7F"
-                        android:layout_gravity="bottom|start"
-                        android:layout_margin="8dp"
-                        />
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="✏️"
-                        android:textSize="20sp"
-                        android:backgroundTint="#46C2D7"
-                        android:textColor="#FFF"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="8dp" />
-                </FrameLayout>
-
-
-
-
-
-
-
-
-
-
+                <!-- FrameLayouts will be added dynamically based on the pet count -->
             </GridLayout>
+
+            <!-- TextView for "No Pets Found" message -->
+            <TextView
+                android:id="@+id/noPetsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No pets found"
+                android:visibility="gone"
+                android:textSize="18sp"
+                android:textColor="#FF0000"
+                android:layout_gravity="center" />
         </LinearLayout>
     </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:elevation="2dp"
+        app:menu="@menu/bottom_menu"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        />
 </LinearLayout>

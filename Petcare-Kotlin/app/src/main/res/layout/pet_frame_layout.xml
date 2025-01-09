@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    android:layout_columnWeight="1"
+    android:padding="3dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_border"
+    android:backgroundTint="#B0FBFF"
+    android:id="@+id/viewPetContainer"
+
+
+
+    >
+
+    <TextView
+        android:id="@+id/petNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pet Name"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginStart="10dp"
+        android:padding="30dp" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:text="🗑️"
+        android:textSize="20sp"
+        android:backgroundTint="#FB6D7F"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="8dp"
+
+        />
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:text="✏️"
+        android:textSize="20sp"
+        android:backgroundTint="#46C2D7"
+        android:textColor="#FFF"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp" />
+</FrameLayout>

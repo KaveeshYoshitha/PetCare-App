@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addNewPetLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5EFE3"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".AddNewPetActivity"
+    >
 
     <!-- Logo and profile button Linear Layout -->
     <LinearLayout
@@ -57,23 +61,34 @@
                 >
 
 
-                <ImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="25dp"
-                    android:src="@drawable/profile_picture"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/circle_shape"
-                    android:clipToOutline="true"
-                    android:layout_gravity="center"
-                    />
+<!--                <ImageView-->
+<!--                    android:id="@+id/profileImageView"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    android:src="@drawable/profile_picture"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:background="@drawable/circle_shape"-->
+<!--                    android:clipToOutline="true"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    />-->
 
 
 
 
             </LinearLayout>
 
+            <!-- Select Photo Button -->
+<!--            <Button-->
+<!--                android:id="@+id/selectPhotoButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Select Photo"-->
+<!--                android:backgroundTint="#FB6D7F"-->
+<!--                android:textColor="#FFF"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginBottom="24dp"-->
+<!--                />-->
 
             <!-- Name Field -->
             <EditText
@@ -127,17 +142,17 @@
                 android:textColor="#000"
                 />
 
-            <Button
-                android:id="@+id/documentsButton"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="Select Medical Document"
-                android:padding="12dp"
-                android:layout_marginBottom="24dp"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:backgroundTint="#9EEDFB"
-                />
+<!--            <Button-->
+<!--                android:id="@+id/documentsButton"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Select Medical Document"-->
+<!--                android:padding="12dp"-->
+<!--                android:layout_marginBottom="24dp"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="16sp"-->
+<!--                android:backgroundTint="#9EEDFB"-->
+<!--                />-->
 
 
 
@@ -160,5 +175,25 @@
 
         </LinearLayout>
     </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:elevation="2dp"
+        app:menu="@menu/bottom_menu"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        />
+
 
 </LinearLayout>
